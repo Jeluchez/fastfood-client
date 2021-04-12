@@ -1,0 +1,136 @@
+.tracks__container {
+    background-color: $black;
+    background-image: linear-gradient(to bottom,rgba(13, 13, 13, 1) 45%,rgba(13, 13, 13, .75) 70%,  rgba(13, 13, 13, .0)), url(../../images/bg-main.jfif);
+    
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position: bottom 0px left 50%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+.tracks__logo-form{
+    display: flex;
+    margin-top: 10px;
+    .logo{
+        flex-basis: 40px;
+        transition: .3s all;
+        overflow: hidden;
+        margin-right: rem(10);
+        img{
+            width: rem(40); 
+        }
+    }
+}
+.sorting-box{
+    flex: 1;
+}
+// ICONS
+.tracks_icon-active {
+    color: $primary !important;
+
+}
+
+.tracks__icon-list {
+    .mdi {
+        color: $lgray;
+        font-size: 24px;
+    }
+
+    li {
+        cursor: pointer;
+        transition: .3s all;
+        width: min-content;
+        height:  min-content;
+        text-align: center;
+        padding-left: 7px;
+    }
+
+    li span:not(:last-child) {
+        color: $lgray;
+    }
+    li span{
+        transition: .3s all;
+    }
+
+    li:hover span {
+        color: #fff !important;
+        border-radius: 100%;
+    }
+}
+
+h3.tracks__title-all {
+    color: #ffffff;
+    border-bottom: 2px solid #fff;
+    width: min-content;
+}
+
+.tracks__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 0.5px solid $dgray;
+    padding-bottom: rem(20);
+
+    .title,
+    .showing-count {
+        font-weight: 200;
+        font-size: 14px;
+        color: $lgray;
+        span{
+            font-weight: 500;
+            color: #fff;
+        }
+    }
+
+    .showing-count {
+        text-align: right;
+    }
+
+    &~hr {
+        margin: 5px 0;
+    }
+}
+
+.tracks__footer {
+    // padding: rem(16);
+    background-image: linear-gradient(to bottom, rgba(13, 13, 13, 0.5), rgba(13, 13, 13, 0.5)), url(../../images/blur_bg_play.jpg);
+    background-size: cover;
+    flex: 1 0 100px;
+    max-height: 100px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: .1s all ease-in-out;
+
+    &-image {
+        display: flex;
+
+        img {
+            width: 50px;
+            border-radius: 100%;
+            margin-right: rem(15);
+        }
+
+        .title {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .artist {
+            display: block;
+            font-weight: 200;
+            font-size: 14px;
+        }
+    }
+
+    &-player {
+        span {
+            padding-left: rem(10);
+            font-size: 24px;
+        }
+    }
+}

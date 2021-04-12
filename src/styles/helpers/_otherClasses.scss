@@ -1,0 +1,17 @@
+// this class serve to hide the logo
+.hide {
+    flex-basis: 0 !important;
+    margin-right: 0 !important;
+}
+
+// this class serve to hide the filter options
+.move-down {
+    overflow: visible;
+    height: 60px;
+}
+
+.play-move-up {
+    overflow: hidden;
+    max-height: 0px !important;
+    padding: rem(0) rem(16) !important;
+}

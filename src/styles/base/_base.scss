@@ -1,0 +1,39 @@
+* {
+    font-family: mulish, sans-serif;
+    margin: 0;
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+// remove input background when active
+// input:-webkit-autofill,
+// input:-webkit-autofill:hover,
+// input:-webkit-autofill:focus,
+// input:-webkit-autofill:active {
+//     color: $lgray !important;
+//     box-shadow: 0 0 0 30px $dgray inset !important;
+// }
+
+
+button {
+    border: none;
+    background: none;
+    &:focus {
+        border: none;
+        outline: none;
+    }
+}

@@ -1,0 +1,76 @@
+.artist__container {
+    background: red;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(13, 13, 13, 0.5), rgba(13, 13, 13, 0.5)), url(../../images/blur_bg_play.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+// btn to go back
+.btn-back {
+    span {
+        font-size: 25px;
+    }
+}
+// header only contain the the image
+header {
+    .artist__img-wrapper {
+        height: 200px;
+        width: 200px;
+        margin: auto;
+
+        img {
+            width: 100%;
+            border-radius: 100%;
+            box-shadow: 0px 0px 8px 4px rgba(13, 13, 13, 0.3);
+        }
+
+    }
+}
+
+.artist__info {
+    padding: 20px 20px;
+
+    .title-foll,.artist-date{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+    .followers, .date{
+        height: min-content;
+        margin: auto 0;
+        span:first-child{
+            margin-right: 3px;
+        }
+    }
+
+    .title{
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .artist{
+        color: $lgray;
+        font-weight: 200;
+    }
+    .date{
+        span{
+            @extend .artist;
+        }
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               MEDIAS QUERIES                               */
+/* -------------------------------------------------------------------------- */
+
+@media (min-width:768px){
+    .artist__header,.artist__info{
+        display: inline-block;
+
+        .artist__img-wrapper{
+            margin:0;
+        }
+    }
+}

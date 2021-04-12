@@ -1,0 +1,159 @@
+@keyframes ldio-ktcmysghuyp-1 {
+  0% {
+    top: 36px;
+    height: 128px
+  }
+
+  50% {
+    top: 60px;
+    height: 80px
+  }
+
+  100% {
+    top: 60px;
+    height: 80px
+  }
+}
+
+@keyframes ldio-ktcmysghuyp-2 {
+  0% {
+    top: 41.99999999999999px;
+    height: 116.00000000000001px
+  }
+
+  50% {
+    top: 60px;
+    height: 80px
+  }
+
+  100% {
+    top: 60px;
+    height: 80px
+  }
+}
+
+@keyframes ldio-ktcmysghuyp-3 {
+  0% {
+    top: 48px;
+    height: 104px
+  }
+
+  50% {
+    top: 60px;
+    height: 80px
+  }
+
+  100% {
+    top: 60px;
+    height: 80px
+  }
+}
+
+.ldio-ktcmysghuyp div {
+  position: absolute;
+  width: 30px
+}
+
+.ldio-ktcmysghuyp div:nth-child(1) {
+  left: 35px;
+  background: $primary;
+  animation: ldio-ktcmysghuyp-1 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  animation-delay: -0.2s
+}
+
+.ldio-ktcmysghuyp div:nth-child(2) {
+  left: 85px;
+  background: $secundary;
+  animation: ldio-ktcmysghuyp-2 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  animation-delay: -0.1s
+}
+
+.ldio-ktcmysghuyp div:nth-child(3) {
+  left: 135px;
+  background: $green;
+  animation: ldio-ktcmysghuyp-3 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  animation-delay: undefineds
+}
+
+.loadingio-spinner-pulse-5d0f55pm6zs {
+  height: 40px;
+  display: inline-block;
+  overflow: hidden;
+  background: transparent;
+}
+
+.ldio-ktcmysghuyp {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0;
+  /* see note above */
+}
+
+.ldio-ktcmysghuyp div {
+  box-sizing: content-box;
+}
+
+// modifies
+.tracks__spinner {
+  grid-column: 1 / -1;
+  width: 100px !important;
+  margin: 0 auto;
+
+  .ldio-ktcmysghuyp {
+    >div {
+      opacity: .8;
+      height: 20px !important;
+      width: 7px;
+      margin-top: -50%;
+    }
+
+    >div:nth-child(2) {
+      left: 45px;
+    }
+
+    >div:nth-child(3) {
+      left: 55px;
+    }
+
+  }
+}
+
+
+// other loading
+
+
+.circonf {
+  $size: 2em;
+  $speed: .7s;
+  margin: 1em;
+  display: inline-block;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  border: 4px solid silver;
+  animation: circ-anim $speed linear infinite;
+}
+
+.circonf-6 {
+  position: absolute;
+  border-width: 0px;
+  border-radius: 50%;
+  border-top: 3px solid #fff;
+  border-right: 3px solid transparent;
+}
+
+
+
+
+@keyframes circ-anim {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
