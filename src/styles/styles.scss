@@ -2,15 +2,13 @@
 @import './base/base';
 @import './base/mixins';
 
-// pages
-.desc{
-    color: red;
-}
+
 
 // components
-// @import './components/tracks/form-search';
+@import './components/auth/login-screen';
+@import './components/auth/login-form';
 
 // helpers
 @import './helpers/scroll-bar';
-@import './helpers/otherClasses';
+@import './helpers/_other-classes';
 @import './helpers/loading';

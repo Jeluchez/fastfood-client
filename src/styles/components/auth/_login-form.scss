@@ -1,0 +1,55 @@
+.login__form {
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+
+
+    .btn-register {
+        margin-top: 15px;
+        background-color: $black;
+        padding: 12px 7px;
+        border-radius: 10px;
+        color: #fff;
+        width: 150px;
+        transition: .5s all;
+
+        &:hover {
+            background-color: lighten($black, 15);
+        }
+    }
+
+    .form-control {
+        border-radius: 10px;
+        height: 44px;
+    }
+    .email-title{
+        display: block;
+        margin-bottom: 5px; 
+    }
+    .password-title {
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            display: block;
+            font-size: 14px;
+            color: $blue;
+        
+            &:hover{
+                text-decoration-line: underline;
+            }
+            span {
+                color: $blue;
+                text-align: right;
+                display: block;
+            }
+        }
+    }
+}
+
+.form-group-password,
+.form-group-email {
+    margin-top: 30px;
+}
