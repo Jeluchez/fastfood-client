@@ -1,17 +1,21 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
+import { useDispatch } from 'react-redux';
+import { startlogin } from '../../actions/authAction';
 
 
 type Inputs = {
-    example: string,
-    exampleRequired: string,
+    email: string,
+    password: string,
 };
 
 export const LoginForm = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
-    const onSubmit = (data: any) => console.log(data);
 
-    console.log(watch("example")) // watch input value by passing the name of it
+    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+
+    const dispatch = useDispatch();
+
+    const onSubmit = (data: Inputs) => dispatch(startlogin(data));;
 
     return (
         /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
@@ -20,8 +24,9 @@ export const LoginForm = () => {
 
                 <div className="form-group form-group-email">
                     <label htmlFor="Email" className="email-title">Usuario Correo Electrónico</label>
-                    {/* register your input into the hook by invoking the "register" function */}
-                    <input className="form-control" defaultValue="test" {...register("example")} />
+
+                    <input className="form-control" defaultValue="" {...register("email", { required: true })} />
+                    {errors.email && <span>This field is required</span>}
                 </div>
 
                 <div className="form-group form-group-password">
@@ -29,10 +34,9 @@ export const LoginForm = () => {
                         <label htmlFor="Password">Contraseña</label>
                         <a href="#/"><span>¿Olvidó su contraseña?</span></a>
                     </div>
-                    {/* include validation with required or other standard HTML validation rules */}
-                    <input className="form-control input-password"  {...register("exampleRequired", { required: true })} />
-                    {/* errors will return when field validation fails  */}
-                    {errors.exampleRequired && <span>This field is required</span>}
+
+                    <input className="form-control input-password"  {...register("password", { required: true })} />
+                    {errors.password && <span>This field is required</span>}
                 </div>
 
                 <input type="submit" className="btn-register" value="Iniciar" />
