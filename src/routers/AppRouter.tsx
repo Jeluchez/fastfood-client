@@ -1,24 +1,25 @@
-export {}
-// import React from 'react'
-// import {
-//     BrowserRouter as Router,
-//     Switch,
-//     Route 
-// } from "react-router-dom";
-// // import { useDispatch } from 'react-redux';
-// import { ArtistPage } from '../pages/ArtistPage';
-// import { TracksPage } from '../pages/TracksPage';
+import React from 'react'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route 
+} from "react-router-dom";
+import { AuthRouter } from './AuthRouter';
+import { PublicRoute } from './PublicRoute';
 
+export const AppRouter = () => {
 
-// export const AppRouter = () => {
-
-
-//     return (
-//         <Router>
-//             <Switch>
-//                 <Route  exact path="/" component={TracksPage}/>
-//                 <Route  path="/artist" component={ArtistPage}/>
-//             </Switch>
-//         </Router>
-//     )
-// }
+    const isLoggedIn=true;
+    return (
+        <Router>
+            <div>
+                <Switch>
+                    <PublicRoute path="/auth" component={AuthRouter} isLoggedIn={isLoggedIn} />
+                    {/* <PrivateRoute exact path="/" component={PhrasesScreen} isLoggedIn={isLoggedIn} />
+                    <PrivateRoute exact path="/home/photo" component={PhrasesImagesScreen} isLoggedIn={isLoggedIn} />
+                    <PrivateRoute exact path="/home/selectedphrase" component={SelectedPhraseScreen} isLoggedIn={isLoggedIn} /> */}
+                </Switch>
+            </div>
+        </Router>
+    )
+}

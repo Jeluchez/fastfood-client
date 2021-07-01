@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware, compose, Action } from '
 import thunk, { ThunkAction } from 'redux-thunk';
 
 import { authReducers } from '../reducers/authReducers';
+import { uiReducers } from '../reducers/uiReducers';
 
 
 // typescript no regonize this variables, therefore, we nedd to add to the interface Window
@@ -16,6 +17,7 @@ const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOO
 
 const rootReducer = combineReducers({
     auth: authReducers,
+    ui: uiReducers
 });
 
 
