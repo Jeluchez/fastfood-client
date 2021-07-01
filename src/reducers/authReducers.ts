@@ -1,11 +1,10 @@
 import { authAction, IAuth } from "../interfaces/interfacesTypes"
 import { types } from "../types/types"
 
-const initialState: IAuth= {
-    id: null,
-    name: null,
-    email:null
+const initialState= {
+    loading:false
 }
+
 export const authReducers = (state = initialState, action:authAction) => {
 
     switch (action.type) {

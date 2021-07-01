@@ -2,14 +2,18 @@ import { fetchData } from "../helpers/fetchData";
 import { IAuth } from "../interfaces/interfacesTypes";
 import { AppThunk } from "../store/store";
 import { types } from "../types/types";
+import { finishLoading, startLoading } from "./uiActions";
 
-export const startlogin = (data: any): AppThunk => {
+export const startlogin = (data: any,isLogued:any): AppThunk => {
     return async (dispatch) => {
+
+        dispatch(startLoading())
+
         const body = await fetchData('auth/login', data, 'POST');
 
         if (body.ok) {
-            const { iduser:id, name, email } = body.data.user;
-            
+            const { iduser: id, name, email } = body.data.user;
+
             dispatch(login(
                 {
                     id,
@@ -17,8 +21,12 @@ export const startlogin = (data: any): AppThunk => {
                     email
                 }
             ))
-        }else{
+            isLogued(true);
+            dispatch(finishLoading())
 
+        } else {
+            isLogued(false);
+            dispatch(finishLoading())
         }
     }
 }
